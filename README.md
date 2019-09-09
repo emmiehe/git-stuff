@@ -1,8 +1,8 @@
-# GIT Practice
+# Git Practice
 
-## Notice this is a local git pratice. Working with remote branches should be similar - just keep in mind to always fetch & rebase the latest code from corresponding remote branches before pushing.
+## Note that this is a local Git practice. Working with remote branches should be similar - just keep in mind to always fetch & rebase the latest code from the corresponding remote branches before pushing.
 
-1. Set up the usual odoo customization repo branches
+1. Set up the usual Odoo customization repo branches
     * Production Branches:
         - production
     * Staging Branches:
@@ -82,10 +82,10 @@ gitk --all
 ```
 ![Alt text](img/deploy-f1-f2.png)
 
-5. Notice our staging-2 is now different from production, which is not desired. So let's keep it the same with current production
+5. Notice our staging-2 is now different from production, which is not desired. So let's keep it the same with the current production
 ```sh
 git checkout staging-2
-git rebase production  # avoid using rebase/reset on branches that are not personal as much as possible, since they don't leave a trace. 
+git rebase production  # avoid using rebase/reset on branches that are not personal. Rebases rewrite history and are impossible to trace after the fact. They will also cause issues if somebody has based work of of this branch.
 gitk --all
 ```
 ![Alt text](img/rebase-staging-2.png)
